@@ -1,0 +1,60 @@
+.row {
+    background: #f8f9fa;
+  }
+  
+  .col {
+    border: solid 1px #6c757d;
+    padding: 10px;
+    height:100px;
+  }
+  
+  .container{
+    width:400px;
+     margin-top: 20px;
+  }
+  
+  #row-0 div {
+    border-top:0;
+  }
+
+  #col-00, #col-20, #col-10{
+    border-left:0;
+  }
+
+  #col-02, #col-12, #col-22{
+    border-right:0;
+  }
+
+  #row-2 div {
+    border-bottom:0;
+  }
+
+.parent div{
+  cursor: pointer;
+}
+
+.crosses{
+  box-shadow:0px 0 20px 5px #d9534f
+}
+
+.noughts{
+  box-shadow:0px 0 20px 5px green
+}
+
+.spectator{
+  box-shadow:0px 0 20px 5px black
+}
+
+.fa-circle {
+  margin-top: 10px;
+  color: green;
+  font-size: 50px;
+  margin-left: 42px;
+}
+.fa-times{
+  color:#d9534f;
+  font-size: 65px;
+  margin-top: 4px;
+  margin-left: 50px;
+}
+  

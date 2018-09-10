@@ -1,0 +1,65 @@
+<html ng-app="app">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+  <script src='app.js'></script>
+  <script src='components/home/home-controller.js'></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+</head>
+
+<body ng-controller='homeController'>
+  <div >
+
+    <div class="row">
+      <div class='col-lg-4 col-lg-offset-4' style="text-align:center">
+        <h1>You Are : {{name}}</h1>
+        <h2 ng-style="{'background-color':turn === 'crosses' ? '#d9534f':'green'}" style="color:white;width: 210px; border-radius: 12px;margin-left: 28.5%;">Turn : {{turn}}</h2>
+      </div>
+    </div>
+
+    <div ng-show='winner' style="margin-top:40px">
+        <div class='col-lg-4 col-lg-offset-4' style="text-align:center">
+          <h1 ng-if="winner !== 'draw'">{{winner}} Wins !!!</h1>
+          <h1 ng-if="winner === 'draw'">It's a DRAW !!</h1>
+        </div>
+      </div>
+
+    <div class="container parent" style="width: 500px; margin-top:200px">
+        <div ng-class="name" class="row">
+  
+          <div id='row-0' class="row">
+            <div id='col-00' ng-click="click('col-00')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+            <div id='col-01' ng-click="click('col-01')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+            <div id='col-02' ng-click="click('col-02')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+          </div>
+  
+          <div id='row-1' class="row">
+            <div id='col-10' ng-click="click('col-10')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+            <div id='col-11' ng-click="click('col-11')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+            <div id='col-12' ng-click="click('col-12')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+          </div>
+  
+          <div id='row-2' class="row">
+            <div id='col-20' ng-click="click('col-20')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+            <div id='col-21' ng-click="click('col-21')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+            <div id='col-22' ng-click="click('col-22')" class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 col"><span></span></div>
+          </div>
+        </div>
+      </div>
+
+  
+
+  </div>
+
+  <div style="margin-top:40px">
+      <div class='col-lg-4 col-lg-offset-4' style="text-align:center">
+        <input type="button" ng-click='reset()' value="Reset" class='btn btn-danger' ng-disabled="name === 'spectator'">
+      </div>
+    </div>
+</body>
+
